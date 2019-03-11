@@ -121,7 +121,7 @@ header {
 
 header .logo {
     font-family: Catamaran;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 900;
     text-transform: uppercase;
     color: #111;
@@ -141,13 +141,30 @@ header nav ul li {
     display: inline-block;
     float: left;
     list-style: none;
-    padding: 0 16px;
+    padding: 0 5px;
 }
 
 header nav ul li a{
     font-family: Catamaran;
-    font-size: 16px;
+    font-size: 14px;
     color: #111;
+    text-transform: uppercase;
+    display: inline-block;
+    cursor: pointer;
+    margin: 10px 10px;
+}
+
+header nav ul li a:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #e49a10;
+    transition: width .3s;
+}
+
+header nav ul li a:hover::after {
+     width: 100%;
 }
 
 header .projects {
@@ -187,12 +204,15 @@ header .projects {
     text-transform: uppercase;
 }
 
+/* Footer */
+
 footer {
     width: calc(100% - 80px);
     padding: 40px 40px;
     margin-top: 20px;
     background-color: #111;
     overflow: hidden;
+    border-top: 5px solid #e49a10; 
 }
 
 footer ul {
@@ -205,14 +225,16 @@ footer ul li {
     display: block;
     list-style: none;
     padding: 0px 16px;
-    color: #fff;
+    color: #cdcdcd;
+    line-height: 35px;
+    font-family: Catamaran;
+    font-size: 20px;
 }
 
 footer ul li a {
     font-family: Catamaran;
-    font-size: 14px;
-    color: #fff;
-    line-height: 20px;
+    font-size: 20px;
+    color: #cdcdcd;
 }
 
 .footer-nav {
@@ -220,12 +242,121 @@ footer ul li a {
 }
 
 .footer-sm {
-    width: 50px;
+    width: 40px;
     float: right;
 }
 
 .footer-sm a img {
-    background-color: #fff;
-    border-radius: 50%;
     width: 100%;
+    margin-bottom: 10px;
 }
+
+/* media queries desktop */
+
+@media only screen and (min-width: 1000px) {
+    header .logo {
+        margin: 28px 0;
+        text-align: left;
+        padding: 0 20px 0 40px;
+        line-height: 40px;
+        border-right: 3px solid #e49a10;
+        float: left;
+    }
+    header nav ul {
+        margin-top: 20px;
+        margin-bottom: 0px;
+        margin-left: 100px;
+        float: left;
+    }
+
+    header nav ul li {
+        display: inline-block;
+        float: left;
+        padding: 0 16px;
+    }
+
+    header nav ul li a {
+        line-height: 32px;
+        font-size: 16px;
+    }
+
+    header .projects {
+        display: block;
+        font-family: Catamaran;
+        font-size: 16px;
+        font-weight: 600px;
+        color: #111;
+        text-transform: uppercase;
+        cursor: pointer;
+        float: right;
+        line-height: 40px;
+        border: 1.5px solid #e49a10;
+        margin-right: 40px;
+        margin-top: 28px;
+        padding: 0 20px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+    
+    .wrapper {
+        width: 1000px;
+        margin: 0 auto
+    }
+    .index-banner {
+        height: 600px;
+    }
+
+    .index-links div {
+        margin: 20px 10px 0;
+        height: 300px;
+        background-color: #f2f2f2;
+        float: left;
+    }
+
+    .index-box-link-1 {
+        width: calc( 33.333% - 20px ) !important;
+    }
+
+    .index-box-link-2 {
+        width: calc( 66.667% - 20px ) !important;
+    }
+
+    .index-box-link-3 {
+        width: calc( 25% - 20px ) !important;
+    }
+
+    .index-box-link-5 {
+         width: calc( 25% - 20px ) !important;
+    }
+
+    .index-box-link-4 {
+        width: calc( 50% - 20px ) !important;
+    }
+
+    .index-links {
+        padding: 20px;
+        overflow: hidden;
+    }
+
+    .footer-sm {
+        padding-right: 20px;
+    }
+
+    .index-links div h3 {
+        line-height: 300px;
+    }
+
+  }
+
+@media only screen and (min-width: 1000px) {
+    
+    .footer-nav {
+        display: block;
+    }
+    
+    .footer-posts li span {
+        text-transform: uppercase;
+    }
+}
+
